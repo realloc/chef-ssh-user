@@ -1,21 +1,20 @@
 ---
-driver:
-  name: vagrant
+driver_plugin: vagrant
 
-provisioner:
-  name: chef_solo
+driver_config:
+  require_chef_omnibus: true
 
 platforms:
   - name: ubuntu-12.04
     driver_config:
       box: opscode-ubuntu-12.04
       box_url: https://opscode-vm.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box
-      require_chef_omnibus: true
 
 suites:
   - name: data_bag
     run_list:
-      - recipe[ssh-util-user::data_bag]
+      - recipe[user::data_bag]
+      - recipe[ssh_user::data_bag]
     attributes:
       users:
       - testman

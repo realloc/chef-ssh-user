@@ -1,6 +1,7 @@
 language: ruby
+bundler_args: --without integration
 rvm:
   - 1.9.3
 script:
-  - bundle exec rake knife
+  - bundle exec rake knife_test
   - bundle exec rake foodcritic

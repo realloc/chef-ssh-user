@@ -8,5 +8,5 @@ attribute :key,   :kind_of => String
 
 def initialize(*args)
   super
-  @action = :add
+  @action = :create
 end
