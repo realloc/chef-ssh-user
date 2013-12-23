@@ -1,0 +1,17 @@
+{
+  "id": "testman",
+  "ssh_util": {
+    "ssh_known_hosts": {
+      "github.com": {}
+    },
+    "ssh_config": {
+      "github.com": {
+        "User": "git",
+        "IdentityFile": "~/.ssh/server_rsa"
+      }
+    },
+    "private_keys": {
+      "server_rsa": "ABCD"
+    }
+  }
+}

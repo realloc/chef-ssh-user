@@ -1,0 +1,7 @@
+.*
+*~
+/*.lock
+.kitchen.local.yml
+!.kitchen.yml
+!.travis.yml
+!.git*
