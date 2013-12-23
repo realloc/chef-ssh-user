@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'chef'
-#gem 'emeril'
 gem 'berkshelf'
 gem 'foodcritic'
 gem 'test-kitchen'
