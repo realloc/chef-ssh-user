@@ -1,5 +1,6 @@
 .*
 *~
+/tmp/
 /*.lock
 .kitchen.local.yml
 !.kitchen.yml

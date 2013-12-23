@@ -1,8 +1,8 @@
 name             "ssh_user"
-maintainer       "We Are Interactive"
+maintainer       "franklin"
 maintainer_email 'franklin@weareinteractive.com'
 license          'MIT'
-description      'Installs/Configures ssh_user'
+description      'Manage basic global or user\'s ssh configurations.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
 recipe           "ssh_user", "Empty recipe for including LWRPs"
