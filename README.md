@@ -1,5 +1,8 @@
 # Chef SSH User
 
+[![Build Status](https://travis-ci.org/franklinkim/chef-ssh-user.png?branch=master)](https://travis-ci.org/franlinkim/chef-ssh-user)
+[![Dependency Status](https://gemnasium.com/franklinkim/chef-ssh-user.png)](https://gemnasium.com/franklinkim/chef-ssh-user)
+
 > Manage basic global or user's ssh configurations.
 
 ## Description
