@@ -13,7 +13,7 @@ if node[:users]
 			    mode '0700'
 			    owner userid
 			    group userid if userid
-			    action :create_if_missing
+			    action :create
 		    end
 	    end
 
