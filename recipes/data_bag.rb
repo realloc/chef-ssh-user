@@ -8,7 +8,16 @@ if node[:users]
 	    home   = user['home'] ? user['home'] : (userid == 'root' ? '/root' : "/home/#{userid}")
 	    dotssh = "#{home}/.ssh"
 
-      if user['ssh_user']['private_keys']
+	    if user['ssh_user']['private_keys'] or user['ssh_user']['known_hosts'] or user['ssh_user']['config']
+		    directory dotssh do
+			    mode '0700'
+			    owner userid
+			    group userid if userid
+			    action :create_if_missing
+		    end
+	    end
+
+	    if user['ssh_user']['private_keys']
         Chef::Log.info "Adding ssh private keys for #{username}..."
         user['ssh_user']['private_keys'].each do |name, value|
           ssh_user_private_key name do

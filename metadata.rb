@@ -4,8 +4,11 @@ maintainer_email 'franklin@weareinteractive.com'
 license          'MIT'
 description      'Manage basic global or user\'s ssh configurations.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.3'
+#noinspection RubyArgCount
+version          '0.1.4'
+#noinspection RubyArgCount
 recipe           "ssh_user", "Empty recipe for including LWRPs"
+#noinspection RubyArgCount
 recipe           "ssh_user::data_bag", "Read data bag to include ssh configs"
 
 # dependencies
