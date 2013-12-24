@@ -5,7 +5,7 @@ license          'MIT'
 description      'Manage basic global or user\'s ssh configurations.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 #noinspection RubyArgCount
-version          '0.1.4'
+version          '0.1.5'
 #noinspection RubyArgCount
 recipe           "ssh_user", "Empty recipe for including LWRPs"
 #noinspection RubyArgCount
