@@ -35,7 +35,7 @@ if node[:users]
             user userid
             key value['key'] if value.has_key?('key')
             hashed value['hashed'] if value.has_key?('hashed')
-            path dotssh
+            path "#{dotssh}/known_hosts"
           end
         end
       end
@@ -46,7 +46,7 @@ if node[:users]
           ssh_util_config name do
             user userid
             options value
-            path dotssh
+            path "#{dotssh}/config"
           end
         end
       end
