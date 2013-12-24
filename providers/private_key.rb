@@ -1,7 +1,7 @@
 def load_current_resource
   @name  = new_resource.name
-  @user  = new_resource.user || false
-  @path  = new_resource.path || (@user) ? (@user == 'root' ? '/root/.ssh' : "/home/#{@user}/.ssh") : node[:ssh][:private_key_path]
+  @user  = new_resource.user
+  @path  = new_resource.path || (@user ? (@user == 'root' ? '/root/.ssh' : "/home/#{@user}/.ssh") : node[:ssh][:private_key_path])
   @key   = new_resource.key
 end
 
