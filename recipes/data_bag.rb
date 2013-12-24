@@ -5,6 +5,8 @@ if node[:users]
     if user['ssh_user']
 
 	    userid = user['username'] ? user['username'] : username
+	    home   = user['home'] ? user['home'] : (userid == 'root' ? '/root' : "/home/#{userid}")
+	    dotssh = "#{home}/.ssh"
 
       if user['ssh_user']['private_keys']
         Chef::Log.info "Adding ssh private keys for #{username}..."
@@ -12,6 +14,7 @@ if node[:users]
           ssh_user_private_key name do
             key value
             user userid
+            path dotssh
           end
         end
       end
@@ -23,6 +26,7 @@ if node[:users]
             user userid
             key value['key'] if value.has_key?('key')
             hashed value['hashed'] if value.has_key?('hashed')
+            path dotssh
           end
         end
       end
@@ -33,6 +37,7 @@ if node[:users]
           ssh_util_config name do
             user userid
             options value
+            path dotssh
           end
         end
       end
