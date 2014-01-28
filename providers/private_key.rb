@@ -7,7 +7,7 @@ def load_current_resource
 end
 
 action :create do
-  user, key, path, name = @user, @key, @path, @name
+  user, key, pub_key, path, name = @user, @key, @pub_key, @path, @name
 
   file "#{path}/#{name}" do
     content key
@@ -21,7 +21,6 @@ action :create do
     mode '0644'
     owner user if user
     action :create
-    only_if pub_key
   end
 
   new_resource.updated_by_last_action(true)
