@@ -22,6 +22,7 @@ if node[:users]
         user['ssh_user']['private_keys'].each do |name, value|
           ssh_user_private_key name do
             key value
+            pub_key user['ssh_user']['public_keys'][name] if user['ssh_user']['public_keys'] && user['ssh_user']['public_keys'][name]  
             user userid
             path dotssh
           end
